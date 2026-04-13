@@ -13,7 +13,7 @@ app.add_middleware(
 )
 
 redis = get_redis_connection(
-    host="localhost",
+    host="redis",
     port=6379,
     password="senharedis",
     decode_responses=True
