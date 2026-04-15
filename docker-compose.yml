@@ -3,6 +3,8 @@ services:
     build: ./backend
     ports:
       - "8000:8000"
+    volumes:
+      - ./backend:/app
   
   redis:
     image: redis:7.0-alpine
@@ -11,7 +13,6 @@ services:
     command: redis-server --save 20 1 --loglevel warning --requirepass senharedis
     volumes:
       - cache:/data
-
 volumes:
   cache:
     driver: local
