@@ -10,7 +10,7 @@ RUN set -x && \
     # configure timezone
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
     echo $TZ > /etc/timezone && \
-    # install ldap deps
+    # install deps
     apt-get update && \
     apt-get install -y ${PKG} && \
     # install django and deps
@@ -21,6 +21,6 @@ RUN set -x && \
     # apt-get remove -y ${PKG} && \
     apt-get autoremove -y && \
     apt-get clean
-COPY . /app/
+
 
 EXPOSE 8000
